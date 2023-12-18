@@ -1,22 +1,22 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
-	"log"
 	"DatingApp/src/handler"
 	"DatingApp/src/middleware"
 	"DatingApp/src/models"
 	"DatingApp/src/repositories"
 	"DatingApp/src/services"
+	"database/sql"
+	"fmt"
+	"log"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 )
 
-// @securityDefinitions.apikey ApiKeyAuth
-// @in header
-// @name Authorization
+// @securityDefinitions.apikey	ApiKeyAuth
+// @in							header
+// @name						Authorization
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {

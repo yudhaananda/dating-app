@@ -10,19 +10,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags User
-// @Security ApiKeyAuth
-// @Param paging query filter.Paging[filter.UserFilter] false "paging"
-// @Param filter query filter.UserFilter false "filter"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user/ [GET]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		User
+//	@Security	ApiKeyAuth
+//	@Param		paging	query	filter.Paging[filter.UserFilter]	false	"paging"
+//	@Param		filter	query	filter.UserFilter					false	"filter"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user/ [GET]
 func (h *handler) GetUser(ctx *gin.Context) {
 	var filter filter.Paging[filter.UserFilter]
 	filter.SetDefault()
@@ -46,18 +48,20 @@ func (h *handler) GetUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags User
-// @Security ApiKeyAuth
-// @Param id path integer true "id"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user/{id} [DELETE]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		User
+//	@Security	ApiKeyAuth
+//	@Param		id	path	integer	true	"id"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user/{id} [DELETE]
 func (h *handler) DeleteUser(ctx *gin.Context) {
 	id, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
@@ -76,18 +80,20 @@ func (h *handler) DeleteUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags User
-// @Security ApiKeyAuth
-// @Param models body models.Subscribe true "models"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user/subscribe/ [PATCH]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		User
+//	@Security	ApiKeyAuth
+//	@Param		models	body	models.Subscribe	true	"models"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user/subscribe/ [PATCH]
 func (h *handler) Subscribe(ctx *gin.Context) {
 	var input models.Subscribe
 
@@ -107,17 +113,19 @@ func (h *handler) Subscribe(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags User
-// @Security ApiKeyAuth
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user/recomendation/ [GET]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		User
+//	@Security	ApiKeyAuth
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user/recomendation/ [GET]
 func (h *handler) UserRecomendation(ctx *gin.Context) {
 	user, err := h.service.User.GetRecomendedUser(ctx)
 

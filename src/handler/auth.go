@@ -1,24 +1,26 @@
 package handler
 
 import (
-	"net/http"
 	"DatingApp/src/formatter"
 	"DatingApp/src/models"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags Auth
-// @Param registerInput body models.UserInput true "registerInput"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /register [post]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		Auth
+//	@Param		registerInput	body	models.UserInput	true	"registerInput"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/register [post]
 func (h *handler) Register(ctx *gin.Context) {
 	var input models.Query[models.UserInput]
 
@@ -41,17 +43,19 @@ func (h *handler) Register(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags Auth
-// @Param loginInput body models.Login true "loginInput"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /login [post]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		Auth
+//	@Param		loginInput	body	models.Login	true	"loginInput"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/login [post]
 func (h *handler) Login(ctx *gin.Context) {
 	var input models.Login
 

@@ -1,28 +1,30 @@
 package handler
 
 import (
-	"net/http"
-	"strconv"
 	"DatingApp/src/filter"
 	"DatingApp/src/formatter"
 	"DatingApp/src/models"
+	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags PremiumFeature
-// @Security ApiKeyAuth
-// @Param paging query filter.Paging[filter.PremiumFeatureFilter] false "paging"
-// @Param filter query filter.PremiumFeatureFilter false "filter"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /premium-feature/ [GET]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		PremiumFeature
+//	@Security	ApiKeyAuth
+//	@Param		paging	query	filter.Paging[filter.PremiumFeatureFilter]	false	"paging"
+//	@Param		filter	query	filter.PremiumFeatureFilter					false	"filter"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/premium-feature/ [GET]
 func (h *handler) GetPremiumFeature(ctx *gin.Context) {
 	var filter filter.Paging[filter.PremiumFeatureFilter]
 	filter.SetDefault()
@@ -46,18 +48,20 @@ func (h *handler) GetPremiumFeature(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags PremiumFeature
-// @Security ApiKeyAuth
-// @Param models body models.PremiumFeatureInput true "models"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /premium-feature/ [POST]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		PremiumFeature
+//	@Security	ApiKeyAuth
+//	@Param		models	body	models.PremiumFeatureInput	true	"models"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/premium-feature/ [POST]
 func (h *handler) CreatePremiumFeature(ctx *gin.Context) {
 	var input models.Query[models.PremiumFeatureInput]
 
@@ -77,19 +81,21 @@ func (h *handler) CreatePremiumFeature(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags PremiumFeature
-// @Security ApiKeyAuth
-// @Param id path integer true "id"
-// @Param models body models.PremiumFeatureInput true "models"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /premium-feature/{id} [PUT]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		PremiumFeature
+//	@Security	ApiKeyAuth
+//	@Param		id		path	integer						true	"id"
+//	@Param		models	body	models.PremiumFeatureInput	true	"models"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/premium-feature/{id} [PUT]
 func (h *handler) UpdatePremiumFeature(ctx *gin.Context) {
 	var input models.Query[models.PremiumFeatureInput]
 
@@ -116,18 +122,20 @@ func (h *handler) UpdatePremiumFeature(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags PremiumFeature
-// @Security ApiKeyAuth
-// @Param id path integer true "id"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /premium-feature/{id} [DELETE]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		PremiumFeature
+//	@Security	ApiKeyAuth
+//	@Param		id	path	integer	true	"id"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/premium-feature/{id} [DELETE]
 func (h *handler) DeletePremiumFeature(ctx *gin.Context) {
 	id, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {

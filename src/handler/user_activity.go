@@ -10,19 +10,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags UserActivity
-// @Security ApiKeyAuth
-// @Param paging query filter.Paging[filter.UserActivityFilter] false "paging"
-// @Param filter query filter.UserActivityFilter false "filter"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user-activity/ [GET]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		UserActivity
+//	@Security	ApiKeyAuth
+//	@Param		paging	query	filter.Paging[filter.UserActivityFilter]	false	"paging"
+//	@Param		filter	query	filter.UserActivityFilter					false	"filter"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user-activity/ [GET]
 func (h *handler) GetUserActivity(ctx *gin.Context) {
 	var filter filter.Paging[filter.UserActivityFilter]
 	filter.SetDefault()
@@ -46,19 +48,21 @@ func (h *handler) GetUserActivity(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags UserActivity
-// @Security ApiKeyAuth
-// @Param activity path string true "activity"
-// @Param targetUserId body models.UserActivityInputJson true "passed or liked userId"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user-activity/{activity} [POST]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		UserActivity
+//	@Security	ApiKeyAuth
+//	@Param		activity		path	string							true	"activity"
+//	@Param		targetUserId	body	models.UserActivityInputJson	true	"passed or liked userId"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user-activity/{activity} [POST]
 func (h *handler) CreateUserActivity(ctx *gin.Context) {
 	activity := ctx.Param("activity")
 	var targetUserId models.UserActivityInputJson
@@ -88,19 +92,21 @@ func (h *handler) CreateUserActivity(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags UserActivity
-// @Security ApiKeyAuth
-// @Param id path integer true "id"
-// @Param models body models.UserActivityInput true "models"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user-activity/{id} [PUT]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		UserActivity
+//	@Security	ApiKeyAuth
+//	@Param		id		path	integer						true	"id"
+//	@Param		models	body	models.UserActivityInput	true	"models"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user-activity/{id} [PUT]
 func (h *handler) UpdateUserActivity(ctx *gin.Context) {
 	var input models.Query[models.UserActivityInput]
 
@@ -127,18 +133,20 @@ func (h *handler) UpdateUserActivity(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-// @BasePath /api/v1
+//	@BasePath	/api/v1
+//
 // PingExample godoc
-// @Summary
-// @Schemes
-// @Description
-// @Tags UserActivity
-// @Security ApiKeyAuth
-// @Param id path integer true "id"
-// @Accept json
-// @Produce json
-// @Success 200 {object} models.Response
-// @Router /user-activity/{id} [DELETE]
+//
+//	@Summary
+//	@Schemes
+//	@Description
+//	@Tags		UserActivity
+//	@Security	ApiKeyAuth
+//	@Param		id	path	integer	true	"id"
+//	@Accept		json
+//	@Produce	json
+//	@Success	200	{object}	models.Response
+//	@Router		/user-activity/{id} [DELETE]
 func (h *handler) DeleteUserActivity(ctx *gin.Context) {
 	id, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
