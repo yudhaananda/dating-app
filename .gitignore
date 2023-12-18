@@ -4,3 +4,4 @@ build
 generator
 docs/swagger
 go.work
+go.work.sum
