@@ -3,3 +3,4 @@ build
 .vscode
 generator
 docs/swagger
+go.work
