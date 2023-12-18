@@ -1,0 +1,5 @@
+build
+.env
+.vscode
+generator
+docs/swagger
